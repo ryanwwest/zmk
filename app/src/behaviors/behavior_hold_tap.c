@@ -664,7 +664,7 @@ static int keycode_state_changed_listener(const zmk_event_t *eh) {
 static int sensor_event_listener(const zmk_event_t *eh) {
     struct zmk_sensor_event *ev = as_zmk_sensor_event(eh);
 
-    update_hold_status_for_retro_tap(ev->sensor_number);
+    update_hold_status_for_retro_tap(ev->sensor_index);
 
     if (undecided_hold_tap == NULL) {
         LOG_DBG("bubble (no undecided hold_tap active)");
